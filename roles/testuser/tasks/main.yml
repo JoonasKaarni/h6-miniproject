@@ -3,3 +3,4 @@
     name: testuser
     password: "{{ 'test123' | password_hash('sha512') }}"
     shell: /bin/bash
+    state: present

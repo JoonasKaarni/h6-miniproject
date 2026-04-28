@@ -1,11 +1,11 @@
 services:
   db:
-    image: postgres:16
-    container_name: postgres
+    image: postgres:15
+    container_name: mydb
     restart: always
-    ports:
-      - "5432:5432"
     environment:
-      POSTGRES_USER: {{ pg_user }}
-      POSTGRES_PASSWORD: {{ pg_password }}
-      POSTGRES_DB: {{ pg_db }}
+      POSTGRES_USER: {{ db_user }}
+      POSTGRES_PASSWORD: {{ db_password }}
+      POSTGRES_DB: {{ db_name }}
+    ports:
+      - "5433:5432"
