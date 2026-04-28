@@ -1,0 +1,3 @@
+- copy:
+    dest: /tmp/testing
+    content: "test complete\n"
