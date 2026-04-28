@@ -1,0 +1,3 @@
+- copy:
+    dest: /tmp/test
+    content: "This is a test"
