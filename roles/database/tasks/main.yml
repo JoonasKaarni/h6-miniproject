@@ -15,7 +15,6 @@
       - docker.io
       - docker-compose
     state: present
-    update_cache: yes
 
 - name: Start PostgreSQL
   community.docker.docker_compose_v2:
