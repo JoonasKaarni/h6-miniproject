@@ -1,0 +1,23 @@
+- name: Create project folder
+  file:
+    path: /opt/postgres
+    state: directory
+
+- name: Copy docker-compose file
+  template:
+    src: docker-compose.yml.j2
+    dest: /opt/postgres/docker-compose.yml
+
+- name: Install Docker and Docker Compose
+  become: true
+  apt:
+    name:
+      - docker.io
+      - docker-compose
+    state: present
+    update_cache: yes
+
+- name: Start PostgreSQL
+  community.docker.docker_compose_v2:
+    project_src: /opt/postgres
+    state: present
