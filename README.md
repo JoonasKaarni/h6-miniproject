@@ -129,9 +129,6 @@ Playbookkia ajaessa ansible suorittaa toimintansa tässä järjestyksessä:
 4. Suorittaa database roolin. Tässä vaiheessa liitetään all.ymlistä saadut parametrit databasen pohjaan.
 5. Lopullinen kontti siirretään palvelimelle, ja tietokanta on valmis.  
 
-<img width="1651" height="361" alt="Näyttökuva 2026-05-04 174535" src="https://github.com/user-attachments/assets/96ad52a6-f540-460b-b957-51294ae25a48" />  
-
-
 
 # Käyttö ja testaus
 Playbookin ajon oltua idempotentti, on syytä testata toimiiko dockeroitu tietokanta järjestelmä. Tämä tapahtuu kirjautumalla tietokantaan annetuilla tunnuksilla.  
