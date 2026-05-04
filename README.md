@@ -6,7 +6,7 @@ tähän kuvakaappaus toimivasta jutskelista
 # Projektin tarkoitus
 Projektin lähtökohtana oli kokeilla uutta demonia, jotai ei vielä tunnilla ole opeteltu. Päädyimme kokeilemaan dockeroitua tietokanta järjestelmää, sillä se antoi tarpeeksi haastetta.  
 
-Tämän projektin valmistuttua tulisi saada käyttöön automatisoitu täysin valmis tietokantaympäristö, jonka saisi pystyyn pelkästään ajamalla ansiblen playbook komento.
+Tämän projektin valmistuttua tulisi saada käyttöön automatisoitu täysin valmis tietokantaympäristö, jonka saisi pystyyn pelkästään ajamalla ansiblen playbook komento.  
 Hyödynsimme ansiblen lisäksi Dockeria, joka paketoi tarvitsemamme sovellukset ja niiden kirjastot konteiksi. Tämä varmistaa tietokannan toiminnan muillakin laitteilla, eikä vain omassa testiympäristössämme.
 Toinen hyödyntämämme palvelu on PostgreSQL, joka on yksi suosituimmista avoimen lähdekoodin tietokantajärjestelmistä.
 Nämä yhdistämällä saamme yksinkertaisen asennuksen tietokannalle, joka varmasti toimii ilman suurempia konfiguraatioita.  
