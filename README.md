@@ -19,7 +19,6 @@ Ansible
 Docker  
 Docker Compose  
 PostgreSQL  
-Python3  
 
 # Projektiin alkupiste  
 
