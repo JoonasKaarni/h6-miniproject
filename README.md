@@ -15,7 +15,7 @@ Python3
 
 
 # Käyttöönotto
-Ennen käyttöönottoa pitää olla yksityinen SSH-avain githubin avaimiin lisättynä.
+Ennen käyttöönottoa pitää olla yksityinen SSH-avain githubin avaimiin lisättynä.  
 Käyttöönottoon riittää projektin kloonaaminen ja käynnistäminen:
 ~~~
 git clone git@github.com:JoonasKaarni/h6-miniproject.git
@@ -45,7 +45,7 @@ GNU General Public License v3.0
 
 
 # Tekijät
-Aleksi Kallio
+Aleksi Kallio  
 Joonas Kaarni
 
 
