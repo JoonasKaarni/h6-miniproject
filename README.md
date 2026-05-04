@@ -11,7 +11,8 @@ Tämä projekti tarjoaa helposti toistettavan ja idempotentin tietokantaympäris
 Ansible  
 Docker  
 Docker Compose  
-Python3  
+PostgreSQL
+Python3
 
 
 # Käyttöönotto
