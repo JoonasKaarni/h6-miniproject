@@ -82,6 +82,7 @@ SQL komennoissa on tärkeää muistaa, että komennot päättyvät aina puolipis
 
 
 # Docker-konfiguraatio
+## Docker-rooli
 Ensiksi on dockeri roolin konfiguraatio. Tämä rooli huolehtii siitä, että palvelimella on valmiudet käyttää Dockeria ja että käyttäjä pystyy ajamaan kontteja. Ensin pakettien asennus tapahtuu eli docker ja docker-compose asennetaan ja sitten docker-palvelu käynnistetään.
 ~~~
 - name: Install Docker
@@ -107,6 +108,7 @@ Sitten tapahtuu käyttäjän lisääminen docker-ryhmään. Tämä siis lisää 
     groups: docker
     append: yes
 ~~~
+## Database-rooli
 Sitten on luvassa database-rooli. Tämä rooli valmistaa sovelluksen hakemiston ja käynnistää koko ympäristön docker-compose -tiedoston avulla. Aluksi luodaan hakemisto, jonne tullaan sijoittamaan docker-compose -konfiguraatio ja mahdoolliset muut tiedostot.
 ~~~
 - name: Create app directory
