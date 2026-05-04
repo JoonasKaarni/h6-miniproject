@@ -37,8 +37,30 @@ idempotenssin todistus tänne
 
 
 # Projektin Rakenne
-varmaan tähän kuva rakenteesta tree -F, voi olla myös noilla komentorivijutskeleilla
-
+~~~
+./
+├── ansible.cfg
+├── dokumentaatio.txt
+├── group_vars/
+│   └── all.yml
+├── inventory/
+│   └── hosts.ini
+├── LICENSE
+├── README.md
+├── roles/
+│   ├── database/
+│   │   ├── tasks/
+│   │   │   └── main.yml
+│   │   └── templates/
+│   │       └── docker-compose.yml.j2
+│   ├── docker/
+│   │   └── tasks/
+│   │       └── main.yml
+│   └── testuser/
+│       └── tasks/
+│           └── main.yml
+└── site.yml
+~~~
 
 # Käyttö ja testaus
 Playbookin ajon oltua idempotentti, on syytä testata toimiiko dockeroitu tietokanta järjestelmä. Tämä tapahtuu kirjautumalla tietokantaan annetuilla tunnuksilla.  
