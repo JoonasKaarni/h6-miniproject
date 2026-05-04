@@ -82,8 +82,53 @@ SQL komennoissa on tärkeää muistaa, että komennot päättyvät aina puolipis
 
 
 # Docker-konfiguraatio
-tähän kuva tai tiedoston sisältö kopsattu
+Ensiksi on dockeri roolin konfiguraatio. Tämä rooli huolehtii siitä, että palvelimella on valmiudet käyttää Dockeria ja että käyttäjä pystyy ajamaan kontteja. Ensin pakettien asennus tapahtuu eli docker ja docker-compose asennetaan ja sitten docker-palvelu käynnistetään.
+~~~
+- name: Install Docker
+  apt:
+    name:
+      - docker.io
+      - docker-compose
+    state: present
+~~~
+Docker-palvelu käynnistetään ja varmistetaan, että se käynnistyy automaattisesti koneen uudelleenkäynnistyksen jälkeen.
+~~~
+- name: Start Docker
+  service:
+    name: docker
+    state: started
+    enabled: yes
+~~~
+Sitten tapahtuu käyttäjän lisääminen docker-ryhmään. Tämä siis lisää nykyisen käyttäjän docker-ryhmään. Mikäli tätä ei tehdä docker tarvitsee root-oikeudet. Tämän avulla käyttäjä voi siis ajaa dockeria ilman sudoa.
+~~~
+- name: Add user
+  user:
+    name: "user"
+    groups: docker
+    append: yes
+~~~
+Sitten on luvassa database-rooli. Tämä rooli valmistaa sovelluksen hakemiston ja käynnistää koko ympäristön docker-compose -tiedoston avulla. Aluksi luodaan hakemisto, jonne tullaan sijoittamaan docker-compose -konfiguraatio ja mahdoolliset muut tiedostot.
+~~~
+- name: Create app directory
+  file:
+    path: /opt/app
+    state: directory
+~~~
+Seuraava kopioidaan tai generoidaan docker-compose.yml -tiedosto palvelimelle. Tämän avulla docker-compose määrittelee tietokannan, sovelluksen ja mahdolliset verkot.
+~~~
+- name: Copy docker-compose
+  template:
+    src: docker-compose.yml.j2
+    dest: /opt/app/docker-compose.yml
+~~~
+Lopuksi käynnistetään kontit. Tässä siis käytetään Ansible-moduulia community.docker.docker_compose_v2, joka ajaa docker--compose -projektin hakemistossa. Se varmistaa, että määritellyt kontit ovat käynnissä.
+~~~
+- name: Run docker-compose
+  community.docker.docker_compose_v2:
+    project_src: /opt/app
+    state: present
 
+~~~
 
 # Lisenssi
 GNU General Public License v3.0
