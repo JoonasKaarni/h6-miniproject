@@ -40,7 +40,7 @@ käyttö ja testaus ohjeistus.
 tähän kuva tai tiedoston sisältö kopsattu
 
 
-#Lisenssi
+# Lisenssi
 GNU General Public License v3.0
 
 
