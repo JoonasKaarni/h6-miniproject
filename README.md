@@ -18,7 +18,7 @@ Kun playbook ajetaan, saadaan nopeasti pystyyn tallennusvalmis tietokanta noudat
 Ansible  
 Docker  
 Docker Compose  
-PostgreSQL
+PostgreSQL  
 Python3  
 
 # Projektiin alkupiste  
