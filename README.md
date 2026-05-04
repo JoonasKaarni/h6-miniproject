@@ -1,8 +1,6 @@
 # h6-miniproject
 Dockerisoitu tietokantajärjestelmä, joka automaattisesti määrittää ja suorittaa käyttövalmiin ympäristön yhdellä komennolla.
 
-tähän kuvakaappaus toimivasta jutskelista
-
 # Projektin tarkoitus
 Projektin lähtökohtana oli kokeilla uutta demonia, jotai ei vielä tunnilla ole opeteltu. Päädyimme kokeilemaan dockeroitua tietokanta järjestelmää, sillä se antoi tarpeeksi haastetta.  
 
@@ -154,8 +152,4 @@ GNU General Public License v3.0
 # Tekijät
 Aleksi Kallio  
 Joonas Kaarni
-
-
-# Demo
-tähän vois olla ennen esitystä tallennettu esimerkki siitä, miten homma toimii.
 
