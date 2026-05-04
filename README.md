@@ -8,10 +8,10 @@ Tämä projekti tarjoaa helposti toistettavan ja idempotentin tietokantaympäris
 
 
 # Tech Stack
-Ansible
-Docker
-Docker Compose
-Python3
+Ansible  
+Docker  
+Docker Compose  
+Python3  
 
 
 # Käyttöönotto
