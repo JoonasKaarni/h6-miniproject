@@ -131,7 +131,7 @@ Playbookkia ajaessa ansible suorittaa toimintansa tässä järjestyksessä:
 Playbookin ajon oltua idempotentti, on syytä testata toimiiko dockeroitu tietokanta järjestelmä. Tämä tapahtuu kirjautumalla tietokantaan annetuilla tunnuksilla.  
 Tunnukset testaamisen vuoksi pidettiin yksinkertaisina, "mydb" on docker-kontin nimi missä komento suoritetaan, käyttäjätunnus on "opiskelija" sekä tietokannan nimi on "koulu".  
 
-Tietokantaan päästään kirjautumaan PostgreSQL omalla komennolla 'docker exec -it mydb psql -U opiskelija -d koulu'.  
+Tietokantaan päästään kirjautumaan PostgreSQL omalla komennolla "docker exec -it mydb psql -U opiskelija -d koulu".  
 
 <img width="1164" height="126" alt="image" src="https://github.com/user-attachments/assets/c2445233-03dc-47f7-a0f1-2c56e4414208" />
 
