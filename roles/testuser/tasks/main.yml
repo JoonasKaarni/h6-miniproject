@@ -1,6 +1,6 @@
 - name: Create test user
   user:
     name: testuser
-    password: "{{ 'test123' | password_hash('sha512', 'mysalt') }}"
+    password: "{{ 'test123'  }}"
     shell: /bin/bash
     state: present
