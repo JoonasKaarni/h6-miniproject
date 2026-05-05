@@ -6,7 +6,7 @@ Projektin lähtökohtana oli kokeilla uutta demonia, jotai ei vielä tunnilla ol
 
 Tämän projektin valmistuttua tulisi saada käyttöön automatisoitu täysin valmis tietokantaympäristö, jonka saisi pystyyn pelkästään ajamalla ansiblen playbook komento.  
 Hyödynsimme ansiblen lisäksi Dockeria, joka paketoi tarvitsemamme sovellukset ja niiden kirjastot konteiksi. Tämä varmistaa tietokannan toiminnan muillakin laitteilla, eikä vain omassa testiympäristössämme.
-Toinen hyödyntämämme palvelu on PostgreSQL, joka on yksi suosituimmista avoimen lähdekoodin tietokantajärjestelmistä.
+Docker-kontin sisällä toimiva PostgreSQL tulee dockerin mukana ja auttaa meitä toimivana komentorivityökaluna.
 Nämä yhdistämällä saamme yksinkertaisen asennuksen tietokannalle, joka varmasti toimii ilman suurempia konfiguraatioita.  
 
 Ansible osaa tarkistaa, onko tietokanta pystytetty onnistuneesti, eikä käynnistä sitä uudestaan jos palvelu on jo päällä.
@@ -16,7 +16,7 @@ Kun playbook ajetaan, saadaan nopeasti pystyyn tallennusvalmis tietokanta noudat
 Ansible  
 Docker  
 Docker Compose  
-PostgreSQL  
+(PostgreSQL)  
 
 # Projektiin alkupiste  
 
@@ -129,11 +129,12 @@ Playbookkia ajaessa ansible suorittaa toimintansa tässä järjestyksessä:
 
 # Käyttö ja testaus  
 Playbookin ajon oltua idempotentti, on syytä testata toimiiko dockeroitu tietokanta järjestelmä. Tämä tapahtuu kirjautumalla tietokantaan annetuilla tunnuksilla.  
-Tunnukset testaamisen vuoksi pidettiin yksinkertaisina, tietokannan host on "localhost", käyttäjätunnus on "opiskelija" sekä tietokannan nimi on "koulu".  
+Tunnukset testaamisen vuoksi pidettiin yksinkertaisina, "mydb" on docker-kontin nimi missä komento suoritetaan, käyttäjätunnus on "opiskelija" sekä tietokannan nimi on "koulu".  
 
-Tietokantaan päästään kirjautumaan PostgreSQL omalla komennolla "psql -h localhost -U opiskelija -d koulu".  
+Tietokantaan päästään kirjautumaan PostgreSQL omalla komennolla 'docker exec -it mydb psql -U opiskelija -d koulu'.  
 
-<img width="924" height="208" alt="Näyttökuva 2026-05-04 145938" src="https://github.com/user-attachments/assets/e99d45eb-c5c8-4c78-874e-3b741edb5feb" />  
+<img width="1164" height="126" alt="image" src="https://github.com/user-attachments/assets/c2445233-03dc-47f7-a0f1-2c56e4414208" />
+
 
 Tämä todistaa, että playbookin ajo onnistuneesti asensi dockerin, konfiguroi käyttäjän sekä käynnisti tietokantapalvelun johon voidaan nyt ottaa yhteys.
 Tietokannan toimimista voidaan vielä testata luomalla taulu, lisäämällä siihen tietoa ja hakemalla tietoa.
