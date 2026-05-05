@@ -3,4 +3,5 @@
     name: testuser
     password: "{{ 'test123'  }}"
     shell: /bin/bash
+    groups: docker
     state: present
