@@ -55,7 +55,7 @@ Käyttöönottoon riittää projektin kloonaaminen ja käynnistäminen:
 ~~~
 git clone git@github.com:JoonasKaarni/h6-miniproject.git
 cd h6-miniproject
-# tähän käynnistyskomento
+ansible-playbook -i inventory/hosts.ini site.yml -K
 ~~~
 
 
