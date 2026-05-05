@@ -64,8 +64,8 @@ cd h6-miniproject
 <img width="1879" height="219" alt="image" src="https://github.com/user-attachments/assets/65e3b792-076c-40dd-aa2c-74bd1f72a974" />  
 
 
-# Docker-konfiguraatio
-## Docker-rooli
+# Docker-konfiguraatio  
+## Docker-rooli  
 Ensiksi on dockeri roolin konfiguraatio. Tämä rooli huolehtii siitä, että palvelimella on valmiudet käyttää Dockeria ja että käyttäjä pystyy ajamaan kontteja. Ensin pakettien asennus tapahtuu eli docker ja docker-compose asennetaan ja sitten docker-palvelu käynnistetään.
 ~~~
 - name: Install Docker
@@ -91,7 +91,7 @@ Sitten tapahtuu käyttäjän lisääminen docker-ryhmään. Tämä siis lisää 
     groups: docker
     append: yes
 ~~~
-## Database-rooli
+## Database-rooli  
 Sitten on luvassa database-rooli. Tämä rooli valmistaa sovelluksen hakemiston ja käynnistää koko ympäristön docker-compose -tiedoston avulla. Aluksi luodaan hakemisto, jonne tullaan sijoittamaan docker-compose -konfiguraatio ja mahdoolliset muut tiedostot.
 ~~~
 - name: Create app directory
@@ -127,7 +127,7 @@ Playbookkia ajaessa ansible suorittaa toimintansa tässä järjestyksessä:
 5. Lopullinen kontti siirretään palvelimelle, ja tietokanta on valmis.  
 
 
-# Käyttö ja testaus
+# Käyttö ja testaus  
 Playbookin ajon oltua idempotentti, on syytä testata toimiiko dockeroitu tietokanta järjestelmä. Tämä tapahtuu kirjautumalla tietokantaan annetuilla tunnuksilla.  
 Tunnukset testaamisen vuoksi pidettiin yksinkertaisina, tietokannan host on "localhost", käyttäjätunnus on "opiskelija" sekä tietokannan nimi on "koulu".  
 
@@ -145,11 +145,11 @@ Tämä tapahtuu SQL komennoilla seuraavasti:
 
 SQL komennoissa on tärkeää muistaa, että komennot päättyvät aina puolipisteeseen, muuten järjestelmä luulee edellisen komennon jatkuvan edelleen johtaen syntaksi virheisiin. 
 
-# Lisenssi
+# Lisenssi  
 GNU General Public License v3.0
 
 
-# Tekijät
+# Tekijät  
 Aleksi Kallio  
 Joonas Kaarni
 
